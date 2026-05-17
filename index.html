@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CashDaddy Aviator</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:15px;
+  overflow-x:hidden;
+  position:relative;
+  background:linear-gradient(135deg,#000000,#111111,#1b1b1b);
+}
+
+/* glow background */
+
+body::before{
+  content:'';
+  position:absolute;
+  width:300px;
+  height:300px;
+  background:rgba(0,119,255,0.15);
+  border-radius:50%;
+  top:-120px;
+  left:-120px;
+  filter:blur(40px);
+}
+
+body::after{
+  content:'';
+  position:absolute;
+  width:300px;
+  height:300px;
+  background:rgba(128,0,255,0.15);
+  border-radius:50%;
+  bottom:-120px;
+  right:-120px;
+  filter:blur(40px);
+}
+
+/* main card */
+
+.card{
+  width:100%;
+  max-width:520px;
+  background:#ffffff;
+  border-radius:35px;
+  padding:28px 22px;
+  text-align:center;
+  position:relative;
+  z-index:2;
+  box-shadow:0 15px 40px rgba(0,0,0,0.35);
+}
+
+/* top bar */
+
+.top-bar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.telegram{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:#1d9bf0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#fff;
+  font-size:24px;
+  font-weight:bold;
+}
+
+.open-btn{
+  background:linear-gradient(90deg,#1aa7ff,#007bff);
+  color:white;
+  padding:12px 24px;
+  border-radius:40px;
+  font-size:16px;
+  font-weight:bold;
+}
+
+/* logo */
+
+.logo{
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  object-fit:cover;
+  margin:10px auto 22px;
+  display:block;
+  box-shadow:0 8px 20px rgba(0,0,0,0.18);
+}
+
+/* heading */
+
+h1{
+  font-size:40px;
+  color:#111;
+  margin-bottom:16px;
+  font-weight:800;
+}
+
+/* subscribers */
+
+.subs{
+  font-size:22px;
+  color:#666;
+  margin-bottom:25px;
+}
+
+.subs span{
+  color:#1d9bf0;
+  font-weight:bold;
+}
+
+/* info */
+
+.info{
+  font-size:22px;
+  color:#111;
+  line-height:1.9;
+  margin-bottom:28px;
+}
+
+/* description */
+
+.desc{
+  font-size:19px;
+  color:#222;
+  line-height:1.7;
+  margin-bottom:30px;
+}
+
+/* button */
+
+.join-btn{
+  display:inline-block;
+  width:100%;
+  padding:18px;
+  background:linear-gradient(90deg,#17a8ff,#006eff);
+  color:white;
+  text-decoration:none;
+  border-radius:60px;
+  font-size:26px;
+  font-weight:bold;
+  transition:0.3s;
+  box-shadow:0 10px 25px rgba(0,110,255,0.35);
+}
+
+.join-btn:hover{
+  transform:scale(1.02);
+}
+
+/* timer */
+
+.timer{
+  margin-top:18px;
+  font-size:24px;
+  color:#16a34a;
+  font-weight:bold;
+}
+
+/* invite */
+
+.invite{
+  margin-top:28px;
+  color:#666;
+  font-size:18px;
+  line-height:1.7;
+}
+
+/* footer */
+
+.footer{
+  margin-top:35px;
+  padding-top:25px;
+  border-top:1px solid #ddd;
+  color:#777;
+  font-size:14px;
+  line-height:1.8;
+}
+
+/* mobile responsive */
+
+@media(max-width:600px){
+
+  .card{
+    padding:22px 16px;
+    border-radius:26px;
+  }
+
+  .telegram{
+    width:48px;
+    height:48px;
+    font-size:20px;
+  }
+
+  .open-btn{
+    font-size:13px;
+    padding:10px 16px;
+  }
+
+  .logo{
+    width:125px;
+    height:125px;
+  }
+
+  h1{
+    font-size:27px;
+    line-height:1.4;
+  }
+
+  .subs{
+    font-size:18px;
+  }
+
+  .info{
+    font-size:17px;
+    line-height:1.8;
+  }
+
+  .desc{
+    font-size:15px;
+  }
+
+  .join-btn{
+    font-size:21px;
+    padding:16px;
+  }
+
+  .timer{
+    font-size:20px;
+  }
+
+  .invite{
+    font-size:15px;
+  }
+
+  .footer{
+    font-size:12px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <!-- top -->
+
+  <div class="top-bar">
+    <div class="telegram">✈</div>
+    <div class="open-btn">OPEN IN WEB</div>
+  </div>
+
+  <!-- logo -->
+
+  <img src="logo.png" class="logo" alt="CashDaddy Logo">
+
+  <!-- title -->
+
+  <h1>🚀 CASHDADDY AVIATOR ✅</h1>
+
+  <!-- subscribers -->
+
+  <div class="subs">
+    <span>6,218</span> Subscribers
+  </div>
+
+  <!-- info -->
+
+  <div class="info">
+    DAILY SIGNAL 🚨 <br>
+    07:00 AM To 10:00 PM <br>
+    FREE SIGNAL 🚨
+  </div>
+
+  <!-- description -->
+
+  <div class="desc">
+    We Provide Daily Signal Updates For Free.
+  </div>
+
+  <!-- button -->
+
+  <a href="https://t.me/+il6kxJ50jWo1MjQ1"
+     target="_blank"
+     class="join-btn">
+     👉 JOIN NOW
+  </a>
+
+  <!-- timer -->
+
+  <div class="timer">
+    Redirecting In: <span id="count">15</span>s
+  </div>
+
+  <!-- invite -->
+
+  <div class="invite">
+    You are invited to the channel 🎯 <b>CASHDADDY AVIATOR</b><br>
+    🎯 Click above to join.
+  </div>
+
+  <!-- footer -->
+
+  <div class="footer">
+    This channel is for educational & discussion purposes only.<br>
+    No guaranteed income. 18+ only.<br><br>
+
+    © 2026 CASHDADDY AVIATOR | All Rights Reserved
+  </div>
+
+</div>
+
+<script>
+
+let seconds = 15;
+
+const count = document.getElementById('count');
+
+const timer = setInterval(() => {
+
+  seconds--;
+
+  count.innerText = seconds;
+
+  if(seconds <= 0){
+
+    clearInterval(timer);
+
+    window.location.href = 'https://t.me/+il6kxJ50jWo1MjQ1';
+
+  }
+
+},1000);
+
+</script>
+
+</body>
+</html>
